@@ -1,0 +1,39 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    background-color: white;
+    z-index: 100;
+    top: 0;
+}
+.header_icon{
+    object-fit: contain;
+    height: 60px;
+    margin-left: 40px ;
+}
+
+.header_right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15vw;
+    margin-right: 60px;
+}
+#demo-simple-select{
+    margin-top: 5px;
+    align-items: center;
+    width: 500px;
+    border-radius: 999px !important;
+}
+.host{
+    text-decoration: none;
+    
+}
+.logout{
+    background-color: gray;
+}
+.logout:hover{
+background-color: red;
+}

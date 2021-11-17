@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./home";
+import Header from "./Header";
+import Footer from "./Footer";
+import SearchPage from "./SearchPage";
+import Login from "./Login";
+import {DataProvider} from "./dataContext"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import AddRooms from './addRooms'
+import FileUpload from "./fileupload";
+import RoomsBooked from './roomsBooked';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Router>
+      <DataProvider>
+        <Header />
+        <Switch>
+        <Route path='/host' component={FileUpload} exact={true}/>
+        <Route path='/host1' component={AddRooms} exact={true}/>
+        <Route path='/rooms' component={RoomsBooked} exact={true}/>
+          <Route path='/login' component={Login} exact={true}/>
+          <Route path='/search' component={SearchPage} exact={true}/>
+          <Route path='/' component={Home} exact={true}/>
+        </Switch>
+        </DataProvider>
+        <Footer />
+      </Router>
     </div>
   );
 }
